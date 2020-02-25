@@ -18,47 +18,7 @@ def profile(name):
 	return render_template('index.html', name=name)
 
 
-@app.route('/add_numbers', methods=['GET','POST'])
-def add_numbers_post():
-  if request.method == 'GET':
-	return render_template('add_numbers.html')
 
-  total = "no_one"
-
-  Player_1_choices = []
-
-  Player_2_choices = []
-
-  while request.method == 'POST':
-    total = "no_one"
-
-    if Player_1_choices == ['(1,1)', '(1,2)','(1,3)'] or Player_1_choices == ['(1,1)', '(1,3)','(1,2)'] or Player_1_choices == ['(1,1)', '(2,2)','(3,3)'] or Player_1_choices == ['(1,1)', '(3,3)','(2,2)'] or Player_1_choices == ['(1,1)', '(2,1)','(3,1)'] or Player_1_choices == ['(1,1)', '(3,1)','(2,1)'] or Player_1_choices == ['(1,2)', '(1,1)','(1,3)'] or Player_1_choices == ['(1,2)', '(1,3)','(1,1)'] or Player_1_choices == ['(1,2)', '(2,2)','(3,2)'] or Player_1_choices == ['(1,2)', '(3,2)','(2,2)'] or Player_1_choices == ['(1,3)', '(1,2)','(1,1)'] or Player_1_choices == ['(1,3)', '(1,1)','(1,2)'] or Player_1_choices == ['(1,3)', '(2,3)','(3,3)'] or Player_1_choices == ['(1,3)', '(3,3)','(2,3)'] or Player_1_choices == ['(1,3)', '(2,2)','(3,1)'] or Player_1_choices == ['(1,3)', '(3,1)','(2,2)'] or Player_1_choices == ['(2,1)', '(2,2)','(2,3)'] or Player_1_choices == ['(2,1)', '(2,3)','(2,2)'] or Player_1_choices == ['(2,1)', '(1,1)','(3,1)'] or Player_1_choices == ['(2,1)', '(3,1)','(1,1)'] or Player_1_choices == ['(2,2)', '(1,2)','(3,2)'] or Player_1_choices == ['(2,2)', '(3,2)','(1,2)'] or Player_1_choices == ['(2,2)', '(2,1)','(2,3)'] or Player_1_choices == ['(2,2)', '(2,3)','(2,1)'] or Player_1_choices == ['(2,2)', '(1,2)','(3,2)'] or Player_1_choices == ['(2,2)', '(3,2)','(1,2)'] or Player_1_choices == ['(2,2)', '(1,1)','(3,3)'] or Player_1_choices == ['(2,2)', '(3,3)','(1,1)'] or Player_1_choices == ['(2,2)', '(1,3)','(3,1)'] or Player_1_choices == ['(2,2)', '(3,1)','(1,3)'] or Player_1_choices == ['(2,3)', '(2,2)','(2,1)'] or Player_1_choices == ['(2,3)', '(2,1)','(2,2)'] or Player_1_choices == ['(2,3)', '(1,3)','(3,1)'] or Player_1_choices == ['(2,3)', '(3,1)','(1,3)'] or Player_1_choices == ['(3,1)', '(2,2)','(1,3)'] or Player_1_choices == ['(3,1)', '(1,3)','(2,2)'] or Player_1_choices == ['(3,1)', '(3,2)','(3,3)'] or Player_1_choices == ['(3,1)', '(3,3)','(3,2)'] or Player_1_choices == ['(3,1)', '(2,1)','(1,1)'] or Player_1_choices == ['(3,1)', '(1,1)','(2,1)'] or Player_1_choices == ['(3,2)', '(2,2)','(1,2)'] or Player_1_choices == ['(3,2)', '(1,2)','(2,2)'] or Player_1_choices == ['(3,2)', '(3,1)','(3,3)'] or Player_1_choices == ['(3,2)', '(3,3)','(3,1)'] or Player_1_choices == ['(3,3)', '(2,3)','(1,3)'] or Player_1_choices == ['(3,3)', '(1,3)','(2,3)'] or Player_1_choices == ['(3,3)', '(1,1)','(2,2)'] or Player_1_choices == ['(3,3)', '(2,2)','(1,1)'] or Player_1_choices == ['(3,3)', '(3,2)','(3,1)'] or Player_1_choices == ['(3,3)', '(3,1)','(3,2)']:
-      total = "Player 1"
-      return render_template('add_numbers.html', result=str(total))
-      break
-    if total == "no_one":
-      Player_2_choices.append(request.form['text'])
-    
-    if len(Player_1_choices) + len(Player_2_choices) == 9:
-      total = "Draw"
-      return render_template('add_numbers.html', result=str(total))
-      break
-
-
-      
-    if Player_2_choices == ['(1,1)', '(1,2)','(1,3)'] or Player_2_choices == ['(1,1)', '(1,3)','(1,2)'] or Player_2_choices == ['(1,1)', '(2,2)','(3,3)'] or Player_2_choices == ['(1,1)', '(3,3)','(2,2)'] or Player_2_choices == ['(1,1)', '(2,1)','(3,1)'] or Player_2_choices == ['(1,1)', '(3,1)','(2,1)'] or Player_2_choices == ['(1,2)', '(1,1)','(1,3)'] or Player_2_choices == ['(1,2)', '(1,3)','(1,1)'] or Player_2_choices == ['(1,2)', '(2,2)','(3,2)'] or Player_2_choices == ['(1,2)', '(3,2)','(2,2)'] or Player_2_choices == ['(1,3)', '(1,2)','(1,1)'] or Player_2_choices == ['(1,3)', '(1,1)','(1,2)'] or Player_2_choices == ['(1,3)', '(2,3)','(3,3)'] or Player_2_choices == ['(1,3)', '(3,3)','(2,3)'] or Player_2_choices == ['(1,3)', '(2,2)','(3,1)'] or Player_2_choices == ['(1,3)', '(3,1)','(2,2)'] or Player_2_choices == ['(2,1)', '(2,2)','(2,3)'] or Player_2_choices == ['(2,1)', '(2,3)','(2,2)'] or Player_2_choices == ['(2,1)', '(1,1)','(3,1)'] or Player_2_choices == ['(2,1)', '(3,1)','(1,1)'] or Player_2_choices == ['(2,2)', '(1,2)','(3,2)'] or Player_2_choices == ['(2,2)', '(3,2)','(1,2)'] or Player_2_choices == ['(2,2)', '(2,1)','(2,3)'] or Player_2_choices == ['(2,2)', '(2,3)','(2,1)'] or Player_2_choices == ['(2,2)', '(1,2)','(3,2)'] or Player_2_choices == ['(2,2)', '(3,2)','(1,2)'] or Player_2_choices == ['(2,2)', '(1,1)','(3,3)'] or Player_2_choices == ['(2,2)', '(3,3)','(1,1)'] or Player_2_choices == ['(2,2)', '(1,3)','(3,1)'] or Player_2_choices == ['(2,2)', '(3,1)','(1,3)'] or Player_2_choices == ['(2,3)', '(2,2)','(2,1)'] or Player_2_choices == ['(2,3)', '(2,1)','(2,2)'] or Player_2_choices == ['(2,3)', '(1,3)','(3,1)'] or Player_2_choices == ['(2,3)', '(3,1)','(1,3)'] or Player_2_choices == ['(3,1)', '(2,2)','(1,3)'] or Player_2_choices == ['(3,1)', '(1,3)','(2,2)'] or Player_2_choices == ['(3,1)', '(3,2)','(3,3)'] or Player_2_choices == ['(3,1)', '(3,3)','(3,2)'] or Player_2_choices == ['(3,1)', '(2,1)','(1,1)'] or Player_2_choices == ['(3,1)', '(1,1)','(2,1)'] or Player_2_choices == ['(3,2)', '(2,2)','(1,2)'] or Player_2_choices == ['(3,2)', '(1,2)','(2,2)'] or Player_2_choices == ['(3,2)', '(3,1)','(3,3)'] or Player_2_choices == ['(3,2)', '(3,3)','(3,1)'] or Player_2_choices == ['(3,3)', '(2,3)','(1,3)'] or Player_2_choices == ['(3,3)', '(1,3)','(2,3)'] or Player_2_choices == ['(3,3)', '(1,1)','(2,2)'] or Player_2_choices == ['(3,3)', '(2,2)','(1,1)'] or Player_2_choices == ['(3,3)', '(3,2)','(3,1)'] or Player_2_choices == ['(3,3)', '(3,1)','(3,2)']:
-      total = "Player 2"
-      return render_template('add_numbers.html', result=str(total))
-      break
-
-
-    if total == "no_one":
-      Player_1_choices.append(request.form['text'])
-
-    if len(Player_1_choices) + len(Player_2_choices) == 9:
-      total = "Draw"
-      return render_template('add_numbers.html', result=str(total))
-      break
 
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
