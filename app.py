@@ -25,8 +25,7 @@ def add_numbers_post():
 	  if request.method == 'GET':
 	  	return render_template('add_numbers.html')
 	  elif request.method == 'POST':
-	      email = request.form.get("email")
-              print(email)
+	      
   	      print(request.form['text'].split())
   	      total = 0
   	      try:
