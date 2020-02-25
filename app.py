@@ -25,45 +25,11 @@ def add_numbers_post():
 	  if request.method == 'GET':
 	  	return render_template('add_numbers.html')
 	  elif request.method == 'POST':
+  	      print(request.form['text'].split())
+  	      total = 0
   	      try:
-  	      	Player_1_character = input("You Want To Play With X or O?")
-		if Player_1_character == "X":
-		  Player_2_character = "O"
-		else:
-		  Player_2_character = "X"
-
-		Winner = "no_one"
-
-		Player_1_choices = []
-
-		Player_2_choices = []
-
-		while True:
-		  if Player_1_choices == ['(1,1)', '(1,2)','(1,3)'] or Player_1_choices == ['(1,1)', '(1,3)','(1,2)'] or Player_1_choices == ['(1,1)', '(2,2)','(3,3)'] or Player_1_choices == ['(1,1)', '(3,3)','(2,2)'] or Player_1_choices == ['(1,1)', '(2,1)','(3,1)'] or Player_1_choices == ['(1,1)', '(3,1)','(2,1)'] or Player_1_choices == ['(1,2)', '(1,1)','(1,3)'] or Player_1_choices == ['(1,2)', '(1,3)','(1,1)'] or Player_1_choices == ['(1,2)', '(2,2)','(3,2)'] or Player_1_choices == ['(1,2)', '(3,2)','(2,2)'] or Player_1_choices == ['(1,3)', '(1,2)','(1,1)'] or Player_1_choices == ['(1,3)', '(1,1)','(1,2)'] or Player_1_choices == ['(1,3)', '(2,3)','(3,3)'] or Player_1_choices == ['(1,3)', '(3,3)','(2,3)'] or Player_1_choices == ['(1,3)', '(2,2)','(3,1)'] or Player_1_choices == ['(1,3)', '(3,1)','(2,2)'] or Player_1_choices == ['(2,1)', '(2,2)','(2,3)'] or Player_1_choices == ['(2,1)', '(2,3)','(2,2)'] or Player_1_choices == ['(2,1)', '(1,1)','(3,1)'] or Player_1_choices == ['(2,1)', '(3,1)','(1,1)'] or Player_1_choices == ['(2,2)', '(1,2)','(3,2)'] or Player_1_choices == ['(2,2)', '(3,2)','(1,2)'] or Player_1_choices == ['(2,2)', '(2,1)','(2,3)'] or Player_1_choices == ['(2,2)', '(2,3)','(2,1)'] or Player_1_choices == ['(2,2)', '(1,2)','(3,2)'] or Player_1_choices == ['(2,2)', '(3,2)','(1,2)'] or Player_1_choices == ['(2,2)', '(1,1)','(3,3)'] or Player_1_choices == ['(2,2)', '(3,3)','(1,1)'] or Player_1_choices == ['(2,2)', '(1,3)','(3,1)'] or Player_1_choices == ['(2,2)', '(3,1)','(1,3)'] or Player_1_choices == ['(2,3)', '(2,2)','(2,1)'] or Player_1_choices == ['(2,3)', '(2,1)','(2,2)'] or Player_1_choices == ['(2,3)', '(1,3)','(3,1)'] or Player_1_choices == ['(2,3)', '(3,1)','(1,3)'] or Player_1_choices == ['(3,1)', '(2,2)','(1,3)'] or Player_1_choices == ['(3,1)', '(1,3)','(2,2)'] or Player_1_choices == ['(3,1)', '(3,2)','(3,3)'] or Player_1_choices == ['(3,1)', '(3,3)','(3,2)'] or Player_1_choices == ['(3,1)', '(2,1)','(1,1)'] or Player_1_choices == ['(3,1)', '(1,1)','(2,1)'] or Player_1_choices == ['(3,2)', '(2,2)','(1,2)'] or Player_1_choices == ['(3,2)', '(1,2)','(2,2)'] or Player_1_choices == ['(3,2)', '(3,1)','(3,3)'] or Player_1_choices == ['(3,2)', '(3,3)','(3,1)'] or Player_1_choices == ['(3,3)', '(2,3)','(1,3)'] or Player_1_choices == ['(3,3)', '(1,3)','(2,3)'] or Player_1_choices == ['(3,3)', '(1,1)','(2,2)'] or Player_1_choices == ['(3,3)', '(2,2)','(1,1)'] or Player_1_choices == ['(3,3)', '(3,2)','(3,1)'] or Player_1_choices == ['(3,3)', '(3,1)','(3,2)']:
-		    Winner = "Player 1"
-		    print(Winner + " is the winner!")
-		    break
-		  if Winner == "no_one":
-		    Player_2_choices.append(input("Where You Want Your >"+ Player_2_character + "< To Be In?"))
-
-		  if len(Player_1_choices) + len(Player_2_choices) == 9:
-		    print("Draw")
-		    break
-
-
-
-		  if Player_2_choices == ['(1,1)', '(1,2)','(1,3)'] or Player_2_choices == ['(1,1)', '(1,3)','(1,2)'] or Player_2_choices == ['(1,1)', '(2,2)','(3,3)'] or Player_2_choices == ['(1,1)', '(3,3)','(2,2)'] or Player_2_choices == ['(1,1)', '(2,1)','(3,1)'] or Player_2_choices == ['(1,1)', '(3,1)','(2,1)'] or Player_2_choices == ['(1,2)', '(1,1)','(1,3)'] or Player_2_choices == ['(1,2)', '(1,3)','(1,1)'] or Player_2_choices == ['(1,2)', '(2,2)','(3,2)'] or Player_2_choices == ['(1,2)', '(3,2)','(2,2)'] or Player_2_choices == ['(1,3)', '(1,2)','(1,1)'] or Player_2_choices == ['(1,3)', '(1,1)','(1,2)'] or Player_2_choices == ['(1,3)', '(2,3)','(3,3)'] or Player_2_choices == ['(1,3)', '(3,3)','(2,3)'] or Player_2_choices == ['(1,3)', '(2,2)','(3,1)'] or Player_2_choices == ['(1,3)', '(3,1)','(2,2)'] or Player_2_choices == ['(2,1)', '(2,2)','(2,3)'] or Player_2_choices == ['(2,1)', '(2,3)','(2,2)'] or Player_2_choices == ['(2,1)', '(1,1)','(3,1)'] or Player_2_choices == ['(2,1)', '(3,1)','(1,1)'] or Player_2_choices == ['(2,2)', '(1,2)','(3,2)'] or Player_2_choices == ['(2,2)', '(3,2)','(1,2)'] or Player_2_choices == ['(2,2)', '(2,1)','(2,3)'] or Player_2_choices == ['(2,2)', '(2,3)','(2,1)'] or Player_2_choices == ['(2,2)', '(1,2)','(3,2)'] or Player_2_choices == ['(2,2)', '(3,2)','(1,2)'] or Player_2_choices == ['(2,2)', '(1,1)','(3,3)'] or Player_2_choices == ['(2,2)', '(3,3)','(1,1)'] or Player_2_choices == ['(2,2)', '(1,3)','(3,1)'] or Player_2_choices == ['(2,2)', '(3,1)','(1,3)'] or Player_2_choices == ['(2,3)', '(2,2)','(2,1)'] or Player_2_choices == ['(2,3)', '(2,1)','(2,2)'] or Player_2_choices == ['(2,3)', '(1,3)','(3,1)'] or Player_2_choices == ['(2,3)', '(3,1)','(1,3)'] or Player_2_choices == ['(3,1)', '(2,2)','(1,3)'] or Player_2_choices == ['(3,1)', '(1,3)','(2,2)'] or Player_2_choices == ['(3,1)', '(3,2)','(3,3)'] or Player_2_choices == ['(3,1)', '(3,3)','(3,2)'] or Player_2_choices == ['(3,1)', '(2,1)','(1,1)'] or Player_2_choices == ['(3,1)', '(1,1)','(2,1)'] or Player_2_choices == ['(3,2)', '(2,2)','(1,2)'] or Player_2_choices == ['(3,2)', '(1,2)','(2,2)'] or Player_2_choices == ['(3,2)', '(3,1)','(3,3)'] or Player_2_choices == ['(3,2)', '(3,3)','(3,1)'] or Player_2_choices == ['(3,3)', '(2,3)','(1,3)'] or Player_2_choices == ['(3,3)', '(1,3)','(2,3)'] or Player_2_choices == ['(3,3)', '(1,1)','(2,2)'] or Player_2_choices == ['(3,3)', '(2,2)','(1,1)'] or Player_2_choices == ['(3,3)', '(3,2)','(3,1)'] or Player_2_choices == ['(3,3)', '(3,1)','(3,2)']:
-		    Winner = "Player 2"
-		    print(Winner + " is the winner!")
-		    break
-
-
-		  if Winner == "no_one":
-		    Player_1_choices.append(input("Where You Want Your >"+ Player_1_character + "< To Be In?"))
-
-		  if len(Player_1_choices) + len(Player_2_choices) == 9:
-		    print("Draw")
-		    break
+  	      	for str_num in request.form['text'].split():
+  	      		total += int(str_num)
   	      	return render_template('add_numbers.html', result=str(total))
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
